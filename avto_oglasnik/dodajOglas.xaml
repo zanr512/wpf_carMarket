@@ -1,0 +1,182 @@
+﻿<Window x:Class="avto_oglasnik.dodajOglas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:avto_oglasnik"
+        mc:Ignorable="d"
+        Title="Objavi oglas" Height="650" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>Prodajalec</TabItem.Header>
+                <StackPanel>
+                    <Label Content="Ime"></Label>
+                    <TextBox Name="imeTXT"></TextBox>
+                    <Label Content="Priimek"></Label>
+                    <TextBox Name="priimekTXT"></TextBox>
+                    <Label Content="Lokacija"></Label>
+                    <TextBox Name="lokacijaTXT"></TextBox>
+                    <Label Content="Telefonska številka"></Label>
+                    <TextBox Name="telTXT"></TextBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Prevozno sredstvo</TabItem.Header>
+                <StackPanel Margin="10 0 0 0">
+                    <StackPanel HorizontalAlignment="Right" Margin="0 5 0 0" Orientation="Horizontal">
+                        <Label>Znamka</Label>
+                        <ComboBox Width="120" Name="znamka"></ComboBox>
+                        <Label Margin="30 0 0 0" Content="Model"></Label>
+                        <TextBox Width="100" Name="modelTXT"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="0 5 0 5" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Label Margin="0 0 0 0" Content="Oblika"></Label>
+                        <ComboBox Margin="5 0 1 0" MinWidth="100" Name="oblikaCMB"></ComboBox>
+                        <Label Margin="69 0 0 0" Content="Cena €:"></Label>
+                        <TextBox Margin="5 0 0 0" Name="cenaTXT" Width="50" PreviewTextInput="stevilkeMetoda"></TextBox>
+
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Label Margin="5 0 0 0" Content="Menjalnik"></Label>
+                        <ComboBox Margin="5 0 0 0" MinWidth="100" Name="menjalnikCMB">
+                            <ComboBoxItem Content="Ročni"></ComboBoxItem>
+                            <ComboBoxItem Content="Avtomatski"></ComboBoxItem>
+                        </ComboBox>
+                        <Label Margin="5 0 0 0" Content="Prevoženi kilometri:"></Label>
+                        <TextBox Margin="5 0 0 0" Width="50" Name="prevozeniTXT" PreviewTextInput="stevilkeMetoda"></TextBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Margin="0 5 0 5" Orientation="Horizontal">
+                        <Label Content="Moč motorja(KM)"></Label>
+                        <TextBox Margin="5 0 16 0" Width="50" Name="mocTXT" PreviewTextInput="stevilkeMetoda"></TextBox>
+                        <Label Margin="5 0 0 0" Content="Prostornina ccm:"></Label>
+                        <TextBox Margin="5 0 0 0" Width="50" Name="ccmTXT" PreviewTextInput="stevilkeMetoda"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="0 5 0 0" Orientation="Horizontal">
+                        <Label Content="Letnik in mesec prve registracije"></Label>
+                        <ComboBox Margin="5 0 5 0" Width="80" Name="letaCMB"></ComboBox>
+                        <ComboBox Width="80" Name="meseciCMB"></ComboBox>
+                    </StackPanel>
+                    <StackPanel  Margin="0 5 0 0" Orientation="Horizontal">
+                        <GroupBox Width="auto"  Margin="0 5 0 0" Header="Stanje">
+                            <StackPanel Width="365" Orientation="Horizontal">
+                                <RadioButton Margin="10 6 0 0" Name="rb11" GroupName="stanje" Content="Novo"></RadioButton>
+                                <RadioButton Margin="10 6 0 0" Name="rb12" GroupName="stanje" Content="Rabljeno"></RadioButton>
+                                <RadioButton Margin="10 6 0 0" Name="rb13" GroupName="stanje" Content="Testeno"></RadioButton>
+                                <RadioButton Margin="10 6 0 0" Name="rb14" GroupName="stanje" Content="Karambolirano"></RadioButton>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                    <GroupBox  Margin="0 5 0 0" Header="Gorivo">
+                        <StackPanel Name="tmp" Orientation="Horizontal">
+                            <RadioButton Margin="10 6 0 0" Name="rb1" GroupName="gorivo" Content="Diesel"></RadioButton>
+                            <RadioButton Margin="10 6 0 0" Name="rb2" GroupName="gorivo" Content="Bencin"></RadioButton>
+                            <RadioButton Margin="10 6 0 0" Name="rb3" GroupName="gorivo" Content="Elektrika"></RadioButton>
+                            <RadioButton Margin="10 6 0 0" Name="rb4" GroupName="gorivo" Content="Hibrid"></RadioButton>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <GroupBox Header="Podvozje" Margin="5" Padding="5">
+                                    <StackPanel Height="100">
+                                        <CheckBox Name="ALU" Content="ALU platšča"></CheckBox>
+                                        <CheckBox Name="ABS" Content="ABS sistem"></CheckBox>
+                                        <CheckBox Name="ESP" Content="ESP sistem"></CheckBox>
+                                        <CheckBox Name="ABC" Content="ABC sistem"></CheckBox>
+                                        <CheckBox Name="stiri_wd" Content="štirikolesni pogon"></CheckBox>
+                                        <CheckBox Name="sport_podvozje" Content="športno podvozje"></CheckBox>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Udobje" Margin="5" Padding="5">
+                                    <StackPanel>
+                                        <CheckBox Name="rocnaKlima" Content="Ročna klima"></CheckBox>
+                                        <CheckBox Name="avtoKlima" Content="Avtomatska klima"></CheckBox>
+                                        <CheckBox Name="dvaconska" Content="2.conska klima"></CheckBox>
+                                        <CheckBox Name="stiriconska" Content="4.conska klima"></CheckBox>
+                                        <CheckBox Name="elPomik" Content="el. pomik stekel"></CheckBox>
+                                        <CheckBox Name="zaklepanje" Content="Centralno zaklepanje"></CheckBox>
+                                        <CheckBox Name="keyless" Content="Keyless Go"></CheckBox>
+                                        <CheckBox Name="tempo" Content="Tempomat"></CheckBox>
+                                    </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <GroupBox Header="Varnost" Margin="5" Padding="5">
+                                    <StackPanel Height="100">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Število airbagov:"></Label>
+                                            <TextBox Width="50" Name="st_airbagTXT" PreviewTextInput="stevilkeMetoda"></TextBox>
+                                        </StackPanel>
+                                        <CheckBox Name="meglenke" Content="Meglenke"></CheckBox>
+                                        <CheckBox Name="zavorna_luc" Content="3. zavorna luč"></CheckBox>
+                                        <CheckBox Name="led_zarometi" Content="LED žarometi"></CheckBox>
+                                        <CheckBox Name="alarmna_naprava" Content="Alarmna naprava"></CheckBox>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="Ostala oprema" Margin="5" Padding="5">
+                                    <StackPanel>
+                                        <CheckBox Name="vlecna" Content="Vlečna kljuka"></CheckBox>
+                                        <CheckBox Name="vzratna" Content="Vzratna kamera"></CheckBox>
+                                        <CheckBox Name="senzor" Content="Parkirni senzorji"></CheckBox>
+                                        <CheckBox Name="sani" Content="Strešne sani"></CheckBox>
+                                        <CheckBox Name="bt" Content="Bluetooth vmesnik"></CheckBox>
+                                        <CheckBox Name="usb" Content="USB vmesnik"></CheckBox>
+                                        <CheckBox Name="tv" Content="TV sprejemnik"></CheckBox>
+                                        <CheckBox Name="gps" Content="Navigacija"></CheckBox>
+                                    </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
+
+                        </Grid>
+                    </StackPanel>
+
+
+
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Opis vozila</TabItem.Header>
+                <TextBox TextWrapping="Wrap" Name="box"></TextBox>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Slike</TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition  Height="25"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="2" Name="dodajSlikoBtn" Height="25" VerticalAlignment="Top" Click="dodajSlikoBtn_Click" >Dodaj sliko</Button>
+                    <Button Grid.Row="2" Grid.Column="2" Name="zbrisiSliko" Height="25" Click="zbrisiSliko_Click">Zbriši sliko</Button>
+                    <Image Margin="0 40 0 0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Name="dodajSliko" MaxWidth="300" MouseUp="dodajSlikoBtn_Click" Width="auto" Height="auto"></Image>
+                    <ListBox SelectionMode="Single" Grid.ColumnSpan="2" Name="seznamSlikLB" SelectionChanged="seznamSlikLB_SelectionChanged">
+                    </ListBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button Content="Objavi oglas" Margin="0 0 10 0" Height="25" Click="Button_Click_1"></Button>
+            <Button Margin="0 0 10 0" Height="25" Content="Prekliči" Click="Button_Click"></Button>
+        </StackPanel>
+        
+        
+        
+    </Grid>
+</Window>

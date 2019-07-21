@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="avto_oglasnik.komentar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:avto_oglasnik"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300" MinHeight="150" MinWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox MouseDoubleClick="emoji_MouseDoubleClick" SelectionMode="Single" Name="emoji" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBoxItem>☺</ListBoxItem>
+            <ListBoxItem>☹</ListBoxItem>
+            <ListBoxItem>シ</ListBoxItem>
+            <ListBoxItem>ヅ</ListBoxItem>
+            <ListBoxItem>⍥</ListBoxItem>
+            <ListBoxItem>⍨</ListBoxItem>
+            <ListBoxItem>〠</ListBoxItem>
+        </ListBox>
+        <TextBox TextWrapping="Wrap" Name="komentarTxt" Grid.Row="1"></TextBox>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center">Vzdevek:</Label>
+                <TextBox Width="150" VerticalContentAlignment="Center" Name="vzdevekT" MinWidth="80" Margin="5 5 5 5"></TextBox>
+            </StackPanel>
+            
+            <Button HorizontalAlignment="Right" Grid.Column="1" Name="objavi" Margin="0 5 0 5" Width="150" Grid.Row="2" Click="objavi_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="20" Source="/resource/comment.png"></Image>
+                    <Label>Objavi komentar</Label>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,159 @@
+﻿<Window x:Class="avto_oglasnik.ogledOglasa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:avto_oglasnik"
+        mc:Ignorable="d"
+        Title="ogledOglasa" Height="500" MinHeight="190" Width="860"
+        MinWidth="630"
+        WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    
+    <Grid>
+
+
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>Splošno</TabItem.Header>
+                <ScrollViewer>
+                    <Grid Margin="0 0 0 0" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition MaxWidth="900" Width="3*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle  Grid.Row="0" Grid.ColumnSpan="100" Fill="#062f57"></Rectangle>
+                        <Image  Grid.Row="0" Grid.Column="0" Source="/Resource/logo11.png" Width="auto" Height="auto" HorizontalAlignment="Right"></Image>
+                        <Label VerticalAlignment="Bottom" Margin="0 0 0 5" Name="naslovTxt" Grid.ColumnSpan="2" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Height="auto" Content="AUDI A1 2007"></Label>
+                        <Label Name="cenaZgoraj" VerticalAlignment="Bottom" Margin="0 0 0 5" Grid.Column="2" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Height="auto">13380€</Label>
+                        <Image Margin="0 15 0 0" Stretch="Uniform" Grid.ColumnSpan="1" MaxHeight="600" MaxWidth="900" Grid.Column="1" Grid.Row="1" Name="slikaVozika" Width="auto" Source="/Resource/audi1.jpg"></Image>
+                        <StackPanel Margin="0 15 0 0" MaxWidth="300" HorizontalAlignment="Right" Orientation="Vertical" Grid.Row="1">
+                            <GroupBox  Header="Prodajalec:">
+                                <StackPanel Orientation="Vertical" Margin="0 15 0 0">
+                                    <Image Width="50" Source="/Resource/phone.png"></Image>
+                                    <Label Name="telSTtxt" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">02 99 99 999</Label>
+                                    <Image Margin="0 15 0 0" Width="60" Source="/Resource/contact.png"></Image>
+                                    <Label Name="prodInfoTxt" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">Andrej Novak</Label>
+                                    <Image Margin="0 15 0 0" Width="50" Source="/Resource/lokacija.png"></Image>
+                                    <Label Name="locTxt" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">Maribor</Label>
+
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                        <StackPanel Margin="0 15 0 0" Grid.ColumnSpan="1" Orientation="Vertical" Grid.Column="1" Grid.Row="2">
+                            <Border Margin="0 0 0 0" HorizontalAlignment="Stretch" BorderBrush="#7F9DB9" BorderThickness="1 1 1 1">
+                                <Label Background="#CFD7DF" FontSize="21" FontWeight="Bold" Foreground="#062F57" Content="Osnovni podatki"></Label>
+                            </Border>
+                            <Grid Background="#EBEBEB">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label HorizontalAlignment="Right" Content="1. registracija:"></Label>
+                                <Label Name="regTxt" FontWeight="Bold" Grid.Column="1" Content="Februar 2014"></Label>
+
+                                <Label Grid.Row="2" HorizontalAlignment="Right" Content="Stanje:"></Label>
+                                <Label Name="starTxt" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Content="rabljeno"></Label>
+
+                                <Label Grid.Row="3" HorizontalAlignment="Right" Content="Prevoženi kilometri:"></Label>
+                                <Label Name="kmTxt" FontWeight="Bold" Grid.Row="3" Grid.Column="1" Content="152305"></Label>
+
+                                <Label Grid.Row="4" HorizontalAlignment="Right" Content="Gorivo:"></Label>
+                                <Label Name="gorivoTxt" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Content="bencin"></Label>
+
+                                <Label Grid.Row="5" HorizontalAlignment="Right" Content="Prostornina motorja:"></Label>
+                                <Label Name="ccmTxt" FontWeight="Bold" Grid.Row="5" Grid.Column="1" Content="2979 ccm"></Label>
+
+                                <Label Grid.Row="6" HorizontalAlignment="Right" Content="Moč motorja:"></Label>
+                                <Label Name="mocTxt" FontWeight="Bold" Grid.Row="6" Grid.Column="1" Content="307 KM"></Label>
+
+                                <Label Grid.Row="7" HorizontalAlignment="Right" Content="Menjalnik:"></Label>
+                                <Label Name="menjTxt" FontWeight="Bold" Grid.Row="7" Grid.Column="1" Content="avtomatski"></Label>
+
+                                <Label Grid.Row="8" HorizontalAlignment="Right" Content="Oblika:"></Label>
+                                <Label Name="oblikaTxt" FontWeight="Bold" Grid.Row="8" Grid.Column="1" Content="limuzina"></Label>
+
+
+
+                            </Grid>
+                            <Border HorizontalAlignment="Stretch" BorderBrush="#7F9DB9" BorderThickness="1 1 1 1">
+                                <Label  Background="#CFD7DF" FontSize="21" FontWeight="Bold" Foreground="#062F57" Content="Oprema in ostali podatki"></Label>
+                            </Border>
+                            <Grid Margin="0 0 0 200" Background="#EBEBEB">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <StackPanel Name="ostalo" Grid.Column="1" Orientation="Vertical">
+
+                                </StackPanel>
+
+                                <StackPanel Margin="0 0 0 20" Grid.ColumnSpan="2" Grid.Row="2">
+                                    <Border Margin="0 10 0 10" HorizontalAlignment="Stretch" BorderBrush="#7F9DB9" BorderThickness="1 1 1 1">
+                                        <Label Background="#CFD7DF" FontSize="21" FontWeight="Bold" Foreground="#062F57" Content="Opis"></Label>
+                                    </Border>
+                                    <Border Margin="0 0 0 10">
+                                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Name="oglasP">OPIS VOZILA</TextBlock>
+                                    </Border>
+                                    <Separator Background="#7F9DB9"></Separator>
+                                    <Label FontSize="60" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Black"  Name="cenaTxt">42424 €</Label>
+                                    <local:komentar x:Name="cmt" onGetKomentar="cmt_onGetKomentar" Margin="20 20 20 20"></local:komentar>
+                                    <ListView Background="#EBEBEB" HorizontalContentAlignment="Stretch" Name="komentarji_list" Width="auto" Height="auto">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border HorizontalAlignment="Stretch" BorderBrush="Black" BorderThickness="1 1 1 1">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition></ColumnDefinition>
+                                                                <ColumnDefinition></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label Grid.Column="0" Name="vzdevekLBL" Content="{Binding Vzdevek}"></Label>
+                                                            <Label Grid.Column="1" HorizontalAlignment="Right" Name="datumLBL" Content="{Binding Datum}"></Label>
+                                                        </Grid>
+                                                        <TextBlock Margin="5 5 5 5" Background="White" Text="{Binding Komentar_t}"></TextBlock>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackPanel>
+                            </Grid>
+
+
+
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Name="slikeTab">
+                <TabItem.Header>Slike</TabItem.Header>
+                <ScrollViewer>
+                    <Grid>
+                        <StackPanel Orientation="Vertical" Name="slikeStackPanel" CanVerticallyScroll="True"></StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
